@@ -2,263 +2,452 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Galería | Mis XV</title>
 
+
     <style>
+
         * {
             box-sizing: border-box;
         }
 
+
         body {
+
             margin: 0;
+
             font-family: Arial, sans-serif;
+
             color: white;
 
+
             background:
-                linear-gradient(rgba(5, 20, 45, 0.82),
-                    rgba(5, 20, 45, 0.90)),
+
+                linear-gradient(
+                    rgba(5, 20, 45, 0.82),
+                    rgba(5, 20, 45, 0.90)
+                ),
+
                 url("fondo.jpg");
 
+
             background-size: cover;
+
             background-position: center;
+
             background-attachment: fixed;
+
 
             min-height: 100vh;
 
+
             animation: aparecer 0.8s ease;
+
         }
+
 
         @keyframes aparecer {
 
             from {
+
                 opacity: 0;
+
                 transform: translateY(15px);
+
             }
 
+
             to {
+
                 opacity: 1;
+
                 transform: translateY(0);
+
             }
 
         }
+
+
 
         /* ENCABEZADO */
 
+
         header {
+
             padding: 25px 40px;
 
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
 
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 
+
             background: rgba(0, 10, 30, 0.35);
 
+
             backdrop-filter: blur(8px);
+
         }
+
 
         .logo {
+
             font-size: 24px;
+
             font-weight: bold;
+
             letter-spacing: 3px;
+
         }
+
 
         nav {
+
             display: flex;
+
             gap: 12px;
+
         }
 
+
         nav a {
+
             color: white;
+
             text-decoration: none;
+
 
             padding: 10px 18px;
 
+
             border-radius: 25px;
 
+
             transition: 0.3s;
+
         }
+
 
         nav a:hover {
+
             background: rgba(70, 160, 255, 0.35);
 
+
             box-shadow:
+
                 0 0 15px rgba(80, 180, 255, 0.3);
+
         }
+
 
 
         /* CONTENIDO */
 
+
         .contenido {
+
             padding: 60px 30px;
 
             text-align: center;
+
         }
 
+
         h1 {
+
             font-size: 50px;
 
             margin-bottom: 10px;
 
+
             text-shadow:
+
                 0 0 15px rgba(70, 180, 255, 0.8);
+
         }
 
+
         .descripcion {
+
             color: #d9ecff;
 
             margin-bottom: 40px;
 
             font-size: 18px;
+
         }
+
 
 
         /* GALERÍA */
 
+
         .galeria {
+
             max-width: 1100px;
 
             margin: auto;
 
+
             display: grid;
 
+
             grid-template-columns:
+
                 repeat(auto-fit, minmax(220px, 1fr));
 
+
             gap: 20px;
+
         }
+
 
 
         /* ESPACIO PARA CADA FOTO */
 
-        .foto {
-            min-height: 250px;
 
-            border-radius: 18px;
+  .foto {
+    min-height: 250px;
 
-            background: rgba(30, 100, 170, 0.25);
+    border-radius: 18px;
 
-            border: 1px solid rgba(130, 200, 255, 0.3);
+    background: rgba(30, 100, 170, 0.25);
 
-            backdrop-filter: blur(8px);
+    border: 1px solid rgba(130, 200, 255, 0.3);
 
-            display: flex;
+    backdrop-filter: blur(8px);
 
-            align-items: center;
+    display: flex;
 
-            justify-content: center;
+    align-items: center;
 
-            color: #cce8ff;
+    justify-content: center;
 
-            overflow: hidden;
+    color: #cce8ff;
 
-            transition: 0.3s;
-        }
+    overflow: visible;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 20px rgba(255, 255, 255, 0.55),
+        0 0 35px rgba(255, 255, 255, 0.25);
+}
+
 
         .foto:hover {
+
             transform: scale(1.03);
 
+
             box-shadow:
+
                 0 0 25px rgba(60, 170, 255, 0.3);
+
         }
+
 
 
         /* LAS FOTOS */
 
+
         .foto img {
-            width: 100%;
+    width: 100%;
 
-            height: 100%;
+    height: 100%;
 
-            min-height: 250px;
+    min-height: 250px;
 
-            object-fit: cover;
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.9),
+        0 0 25px rgba(255, 255, 255, 0.5),
+        0 0 45px rgba(255, 255, 255, 0.2);
+}
+
+
+        /* MENSAJE CUANDO NO HAY FOTOS */
+
+
+        .sin-fotos {
+
+            grid-column: 1 / -1;
+
+
+            padding: 45px 20px;
+
+
+            border-radius: 18px;
+
+
+            color: #d9ecff;
+
+
+            font-size: 18px;
+
+
+            background: rgba(30, 100, 170, 0.18);
+
+
+            border: 1px solid rgba(130, 200, 255, 0.25);
+
+
+            backdrop-filter: blur(8px);
+
+        }
+
+
+
+        .sin-fotos span {
 
             display: block;
+
+
+            font-size: 42px;
+
+
+            margin-bottom: 10px;
+
         }
+
 
 
         /* BOTÓN */
 
+
         .subir {
+
             margin-top: 40px;
+
 
             padding: 14px 30px;
 
+
             border-radius: 25px;
+
 
             border: 1px solid rgba(255, 255, 255, 0.5);
 
+
             background: rgba(40, 130, 220, 0.4);
+
 
             color: white;
 
+
             font-size: 16px;
+
 
             cursor: pointer;
 
+
             transition: 0.3s;
+
         }
+
 
         .subir:hover {
+
             background: rgba(50, 160, 255, 0.7);
 
+
             box-shadow:
+
                 0 0 20px rgba(80, 180, 255, 0.5);
 
+
             transform: scale(1.05);
+
         }
+
 
 
         /* CELULAR */
 
+
         @media (max-width: 700px) {
 
+
             header {
+
                 flex-direction: column;
 
                 gap: 20px;
 
                 padding: 20px;
+
             }
 
+
             nav {
+
                 flex-wrap: wrap;
 
                 justify-content: center;
+
             }
+
 
             h1 {
+
                 font-size: 40px;
+
             }
+
 
             .descripcion {
+
                 font-size: 16px;
+
             }
 
+
             .galeria {
+
                 grid-template-columns:
+
                     repeat(2, 1fr);
 
                 gap: 12px;
+
             }
+
 
             .foto {
+
                 min-height: 180px;
+
             }
 
+
             .foto img {
+
                 min-height: 180px;
+
             }
 
         }
+
     </style>
 
 </head>
+
 
 
 <body>
@@ -266,89 +455,159 @@
 
     <!-- ENCABEZADO -->
 
+
     <header>
 
+
         <div class="logo">
+
             MIS XV
+
         </div>
+
 
         <nav>
 
             <a href="inicio.html">
+
                 Inicio
+
             </a>
+
 
             <a href="galeria.html">
+
                 Galería
+
             </a>
 
+
             <a href="mensajes.html">
+
                 Mensajes
+
             </a>
 
         </nav>
 
+
     </header>
+
 
 
     <!-- CONTENIDO -->
 
+
     <main class="contenido">
 
-        <h1>Galería</h1>
+
+        <h1>
+
+            Galería
+
+        </h1>
+
 
         <p class="descripcion">
+
             Comparte los recuerdos de esta noche.
+
         </p>
+
 
 
         <!-- GALERÍA -->
 
+
         <div class="galeria" id="galeria">
 
+
             <!-- Las fotos aparecerán aquí automáticamente -->
+
 
         </div>
 
 
+
         <!-- BOTÓN PARA SUBIR -->
 
+
         <button class="subir" id="botonSubir">
+
             + Subir una foto
+
         </button>
+
 
         <!-- Selector de archivos oculto -->
 
-        <input type="file" id="selectorFoto" accept="image/*" style="display: none;">
+
+        <input
+
+            type="file"
+
+            id="selectorFoto"
+
+            accept="image/*"
+
+            style="display: none;"
+
+        >
+
 
     </main>
 
 
+
     <!-- SUPABASE -->
+
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+
     <script>
 
-        const supabaseUrl = "https://mdyanimoegicpxjzawnu.supabase.co";
 
-        const supabaseKey = "sb_publishable_ACMdOCrdlOUj9yU3SRSWug_8q22AVJ9";
+        const supabaseUrl =
 
-
-        const supabaseClient = window.supabase.createClient(
-            supabaseUrl,
-            supabaseKey
-        );
+            "https://mdyanimoegicpxjzawnu.supabase.co";
 
 
-        const botonSubir = document.getElementById("botonSubir");
+        const supabaseKey =
 
-        const selectorFoto = document.getElementById("selectorFoto");
+            "sb_publishable_ACMdOCrdlOUj9yU3SRSWug_8q22AVJ9";
 
-        const galeria = document.getElementById("galeria");
+
+        const supabaseClient =
+
+            window.supabase.createClient(
+
+                supabaseUrl,
+
+                supabaseKey
+
+            );
+
+
+
+        const botonSubir =
+
+            document.getElementById("botonSubir");
+
+
+        const selectorFoto =
+
+            document.getElementById("selectorFoto");
+
+
+        const galeria =
+
+            document.getElementById("galeria");
+
 
 
         /* ABRIR SELECTOR DE FOTOS */
+
 
         botonSubir.addEventListener("click", () => {
 
@@ -357,307 +616,713 @@
         });
 
 
+
         /* CUANDO SE ESCOGE UNA FOTO */
+
 
         selectorFoto.addEventListener("change", async () => {
 
+
             const archivo = selectorFoto.files[0];
 
+
             if (!archivo) {
+
                 return;
+
             }
+
 
 
             /* Comprobar que sea una imagen */
 
+
             if (!archivo.type.startsWith("image/")) {
 
-                alert("Por favor selecciona una imagen.");
+
+                alert(
+
+                    "Por favor selecciona una imagen."
+
+                );
+
 
                 selectorFoto.value = "";
 
+
                 return;
+
             }
 
 
-            botonSubir.textContent = "Subiendo foto...";
+
+            botonSubir.textContent =
+
+                "Subiendo foto...";
+
 
             botonSubir.disabled = true;
 
 
+
             try {
 
+
                 /*
+
                     Creamos un nombre único para evitar
+
                     que una foto reemplace a otra.
+
                 */
 
-                const extension = archivo.name.split(".").pop();
+
+                const extension =
+
+                    archivo.name.split(".").pop();
+
 
                 const nombreArchivo =
-                    Date.now() + "-" +
-                    Math.random().toString(36).substring(2) +
-                    "." + extension;
+
+                    Date.now() +
+
+                    "-" +
+
+                    Math.random()
+
+                        .toString(36)
+
+                        .substring(2) +
+
+                    "." +
+
+                    extension;
+
 
 
                 /* SUBIR FOTO A SUPABASE */
 
+
                 const { error: errorSubida } =
+
                     await supabaseClient
+
                         .storage
+
                         .from("fotos")
-                        .upload(nombreArchivo, archivo);
+
+                        .upload(
+
+                            nombreArchivo,
+
+                            archivo
+
+                        );
+
 
 
                 if (errorSubida) {
 
+
                     console.error(
+
                         "Error al subir:",
+
                         errorSubida
+
                     );
+
 
                     alert(
+
                         "No se pudo subir la foto."
+
                     );
 
+
                     return;
+
                 }
+
 
 
                 /* OBTENER URL PÚBLICA */
 
+
                 const { data } =
+
                     supabaseClient
+
                         .storage
+
                         .from("fotos")
-                        .getPublicUrl(nombreArchivo);
+
+                        .getPublicUrl(
+
+                            nombreArchivo
+
+                        );
+
 
 
                 /* MOSTRAR LA FOTO */
 
-                mostrarFoto(data.publicUrl);
+
+                mostrarFoto(
+
+                    data.publicUrl
+
+                );
 
 
-                alert("¡Foto subida! 💙");
+                alert(
+
+                    "¡Foto subida! 💙"
+
+                );
 
 
-            } catch (error) {
+            }
+
+
+            catch (error) {
+
 
                 console.error(error);
 
+
                 alert(
+
                     "Ocurrió un error al subir la foto."
+
                 );
 
-            } finally {
+            }
 
-                botonSubir.textContent = "+ Subir una foto";
+
+            finally {
+
+
+                botonSubir.textContent =
+
+                    "+ Subir una foto";
+
 
                 botonSubir.disabled = false;
+
 
                 selectorFoto.value = "";
 
             }
 
+
         });
+
 
 
         /* MOSTRAR UNA FOTO */
 
-       function mostrarFoto(url) {
 
-    const contenedor = document.createElement("div");
-    contenedor.className = "foto";
+        function mostrarFoto(url) {
 
-    const imagen = document.createElement("img");
-    imagen.src = url;
-    imagen.alt = "Foto de los XV";
 
-    // Abrir la foto al tocarla
-    imagen.addEventListener("click", () => {
-        abrirFotoGrande(url);
-    });
+            /*
 
-    contenedor.appendChild(imagen);
-    galeria.appendChild(contenedor);
-}
+                Si estaba mostrando el mensaje
+
+                de "no hay fotos", lo quitamos.
+
+            */
+
+
+            const mensaje =
+
+                document.querySelector(".sin-fotos");
+
+
+            if (mensaje) {
+
+                mensaje.remove();
+
+            }
+
+
+
+            const contenedor =
+
+                document.createElement("div");
+
+
+            contenedor.className = "foto";
+
+
+
+            const imagen =
+
+                document.createElement("img");
+
+
+            imagen.src = url;
+
+
+            imagen.alt = "Foto de los XV";
+
+
+
+            /* Abrir la foto al tocarla */
+
+
+            imagen.addEventListener(
+
+                "click",
+
+                () => {
+
+                    abrirFotoGrande(url);
+
+                }
+
+            );
+
+
+
+            contenedor.appendChild(imagen);
+
+
+            galeria.appendChild(contenedor);
+
+        }
+
 
 
         /* CARGAR TODAS LAS FOTOS */
 
+
         async function cargarFotos() {
 
+
             const { data, error } =
+
                 await supabaseClient
+
                     .storage
+
                     .from("fotos")
+
                     .list();
+
 
 
             if (error) {
 
+
                 console.error(
+
                     "Error al cargar fotos:",
+
                     error
+
                 );
 
+
                 return;
+
             }
+
+
+
+            /* Limpiar la galería */
 
 
             galeria.innerHTML = "";
 
 
+
+            /*
+
+                SI NO HAY FOTOS
+
+                mostramos el mensaje.
+
+            */
+
+
+            if (!data || data.length === 0) {
+
+
+                galeria.innerHTML = `
+
+                    <div class="sin-fotos">
+
+                        <span>📸</span>
+
+                        Todavía no hay fotos.
+
+                        <br>
+
+                        ¡Sé el primero en subir una!
+
+                    </div>
+
+                `;
+
+
+                return;
+
+            }
+
+
+
+            /* Mostrar las fotos */
+
+
             data.forEach(archivo => {
 
+
                 if (!archivo.name) {
+
                     return;
+
                 }
 
 
+
                 const { data: urlData } =
+
                     supabaseClient
+
                         .storage
+
                         .from("fotos")
-                        .getPublicUrl(archivo.name);
+
+                        .getPublicUrl(
+
+                            archivo.name
+
+                        );
 
 
-                mostrarFoto(urlData.publicUrl);
+
+                mostrarFoto(
+
+                    urlData.publicUrl
+
+                );
 
             });
 
-        }
-
-function abrirFotoGrande(url) {
-
-    const fondo = document.createElement("div");
-
-    fondo.style.position = "fixed";
-    fondo.style.top = "0";
-    fondo.style.left = "0";
-    fondo.style.width = "100%";
-    fondo.style.height = "100%";
-    fondo.style.background = "rgba(0, 0, 0, 0.9)";
-    fondo.style.display = "flex";
-    fondo.style.alignItems = "center";
-    fondo.style.justifyContent = "center";
-    fondo.style.flexDirection = "column";
-    fondo.style.zIndex = "9999";
-    fondo.style.padding = "20px";
-
-
-    const imagenGrande = document.createElement("img");
-
-    imagenGrande.src = url;
-
-    imagenGrande.style.maxWidth = "90%";
-    imagenGrande.style.maxHeight = "75vh";
-    imagenGrande.style.objectFit = "contain";
-    imagenGrande.style.borderRadius = "15px";
-
-
-    /* BOTÓN DESCARGAR */
-
-    const descargar = document.createElement("button");
-
-    descargar.textContent = "⬇ Descargar foto";
-
-    descargar.style.marginTop = "20px";
-    descargar.style.padding = "12px 25px";
-    descargar.style.borderRadius = "25px";
-    descargar.style.background = "rgba(40, 130, 220, 0.8)";
-    descargar.style.color = "white";
-    descargar.style.border = "none";
-    descargar.style.fontSize = "16px";
-    descargar.style.cursor = "pointer";
-
-
-    descargar.addEventListener("click", async () => {
-
-        try {
-
-            descargar.textContent = "Descargando...";
-
-            const respuesta = await fetch(url);
-
-            if (!respuesta.ok) {
-                throw new Error("No se pudo descargar la imagen");
-            }
-
-            const blob = await respuesta.blob();
-
-            const enlace = document.createElement("a");
-
-            const urlBlob = URL.createObjectURL(blob);
-
-            enlace.href = urlBlob;
-
-            enlace.download = "foto-mis-xv.jpg";
-
-            document.body.appendChild(enlace);
-
-            enlace.click();
-
-            enlace.remove();
-
-            URL.revokeObjectURL(urlBlob);
-
-            descargar.textContent = "✓ Foto descargada";
-
-        } catch (error) {
-
-            console.error("Error al descargar:", error);
-
-            descargar.textContent = "No se pudo descargar";
 
         }
 
-    });
 
 
-    /* BOTÓN CERRAR */
-
-    const cerrar = document.createElement("button");
-
-    cerrar.textContent = "✕ Cerrar";
-
-    cerrar.style.marginTop = "10px";
-    cerrar.style.padding = "8px 20px";
-    cerrar.style.border = "none";
-    cerrar.style.borderRadius = "20px";
-    cerrar.style.background = "rgba(255,255,255,0.2)";
-    cerrar.style.color = "white";
-    cerrar.style.cursor = "pointer";
+        /* ABRIR FOTO GRANDE */
 
 
-    cerrar.addEventListener("click", () => {
-
-        fondo.remove();
-
-    });
+        function abrirFotoGrande(url) {
 
 
-    /* AGREGAR TODO */
+            const fondo =
 
-    fondo.appendChild(imagenGrande);
+                document.createElement("div");
 
-    fondo.appendChild(descargar);
 
-    fondo.appendChild(cerrar);
+            fondo.style.position = "fixed";
 
-    document.body.appendChild(fondo);
+            fondo.style.top = "0";
 
-}
+            fondo.style.left = "0";
+
+            fondo.style.width = "100%";
+
+            fondo.style.height = "100%";
+
+            fondo.style.background =
+
+                "rgba(0, 0, 0, 0.9)";
+
+            fondo.style.display = "flex";
+
+            fondo.style.alignItems = "center";
+
+            fondo.style.justifyContent = "center";
+
+            fondo.style.flexDirection = "column";
+
+            fondo.style.zIndex = "9999";
+
+            fondo.style.padding = "20px";
+
+
+
+            const imagenGrande =
+
+                document.createElement("img");
+
+
+            imagenGrande.src = url;
+
+
+            imagenGrande.style.maxWidth = "90%";
+
+            imagenGrande.style.maxHeight = "75vh";
+
+            imagenGrande.style.objectFit = "contain";
+
+            imagenGrande.style.borderRadius = "15px";
+
+
+
+            /* BOTÓN DESCARGAR */
+
+
+            const descargar =
+
+                document.createElement("button");
+
+
+            descargar.textContent =
+
+                "⬇ Descargar foto";
+
+
+            descargar.style.marginTop = "20px";
+
+            descargar.style.padding =
+
+                "12px 25px";
+
+            descargar.style.borderRadius =
+
+                "25px";
+
+            descargar.style.background =
+
+                "rgba(40, 130, 220, 0.8)";
+
+            descargar.style.color = "white";
+
+            descargar.style.border = "none";
+
+            descargar.style.fontSize = "16px";
+
+            descargar.style.cursor = "pointer";
+
+
+
+            descargar.addEventListener(
+
+                "click",
+
+                async () => {
+
+
+                    try {
+
+
+                        descargar.textContent =
+
+                            "Descargando...";
+
+
+                        const respuesta =
+
+                            await fetch(url);
+
+
+
+                        if (!respuesta.ok) {
+
+                            throw new Error(
+
+                                "No se pudo descargar la imagen"
+
+                            );
+
+                        }
+
+
+
+                        const blob =
+
+                            await respuesta.blob();
+
+
+
+                        const enlace =
+
+                            document.createElement("a");
+
+
+                        const urlBlob =
+
+                            URL.createObjectURL(
+
+                                blob
+
+                            );
+
+
+                        enlace.href = urlBlob;
+
+
+                        enlace.download =
+
+                            "foto-mis-xv.jpg";
+
+
+                        document.body.appendChild(
+
+                            enlace
+
+                        );
+
+
+                        enlace.click();
+
+
+                        enlace.remove();
+
+
+                        URL.revokeObjectURL(
+
+                            urlBlob
+
+                        );
+
+
+                        descargar.textContent =
+
+                            "✓ Foto descargada";
+
+
+                    }
+
+
+                    catch (error) {
+
+
+                        console.error(
+
+                            "Error al descargar:",
+
+                            error
+
+                        );
+
+
+                        descargar.textContent =
+
+                            "No se pudo descargar";
+
+                    }
+
+
+                }
+
+            );
+
+
+
+            /* BOTÓN CERRAR */
+
+
+            const cerrar =
+
+                document.createElement("button");
+
+
+            cerrar.textContent =
+
+                "✕ Cerrar";
+
+
+            cerrar.style.marginTop = "10px";
+
+            cerrar.style.padding =
+
+                "8px 20px";
+
+            cerrar.style.border = "none";
+
+            cerrar.style.borderRadius =
+
+                "20px";
+
+            cerrar.style.background =
+
+                "rgba(255,255,255,0.2)";
+
+            cerrar.style.color = "white";
+
+            cerrar.style.cursor = "pointer";
+
+
+
+            cerrar.addEventListener(
+
+                "click",
+
+                () => {
+
+                    fondo.remove();
+
+                }
+
+            );
+
+
+
+            /* AGREGAR TODO */
+
+
+            fondo.appendChild(
+
+                imagenGrande
+
+            );
+
+
+            fondo.appendChild(
+
+                descargar
+
+            );
+
+
+            fondo.appendChild(
+
+                cerrar
+
+            );
+
+
+            document.body.appendChild(
+
+                fondo
+
+            );
+
+        }
+
+
 
         /* CARGAR FOTOS AL ABRIR LA PÁGINA */
 
-        cargarFotos(); /* CARGAR FOTOS AL ABRIR LA PÁGINA */
+
+        cargarFotos();
+
+
 
         /* ACTUALIZAR LA GALERÍA AUTOMÁTICAMENTE */
 
+
         setInterval(() => {
+
             cargarFotos();
+
         }, 5000);
+
 
     </script>
 
