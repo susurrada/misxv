@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mis XV</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .portada {
+            min-height: 100vh;
+
+            background-image:
+                linear-gradient(
+                    rgba(5, 20, 45, 0.45),
+                    rgba(5, 20, 45, 0.65)
+                ),
+                url("fondo.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .contenido {
+            padding: 30px;
+        }
+
+        .pequeno {
+            font-size: 18px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 75px;
+            margin: 0;
+
+            letter-spacing: 5px;
+
+            text-shadow:
+                0 0 10px rgba(100, 190, 255, 0.8),
+                0 0 25px rgba(50, 150, 255, 0.5);
+        }
+
+        .nombre {
+            font-size: 32px;
+            margin-top: 15px;
+            letter-spacing: 3px;
+        }
+
+        .fecha {
+            font-size: 18px;
+            margin-top: 20px;
+            letter-spacing: 3px;
+        }
+
+        .boton {
+            display: inline-block;
+
+            margin-top: 40px;
+
+            padding: 14px 45px;
+
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 30px;
+
+            background: rgba(30, 130, 220, 0.45);
+
+            color: white;
+            text-decoration: none;
+
+            font-size: 16px;
+            letter-spacing: 3px;
+
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+            background: rgba(50, 160, 255, 0.8);
+
+            transform: scale(1.05);
+
+            box-shadow:
+                0 0 20px rgba(80, 180, 255, 0.7);
+        }
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 48px;
+            }
+
+            .nombre {
+                font-size: 25px;
+            }
+
+            .pequeno {
+                font-size: 14px;
+            }
+
+        }
+        .portada {
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.portada.salida {
+    opacity: 0;
+    transform: scale(1.05);
+}
+
+    </style>
+
+</head>
+<script>
+    function salir(event) {
+        event.preventDefault();
+
+        document.querySelector(".portada").classList.add("salida");
+
+        setTimeout(function() {
+            window.location.href = "inicio.html";
+        }, 700);
+    }
+</script>
+
+<body>
+
+    <section class="portada">
+
+        <div class="contenido">
+
+            <div class="pequeno">
+                Una noche para recordar
+            </div>
+
+            <h1>MIS XV</h1>
+
+            <div class="nombre">
+                "María José Benítez Cardona"
+            </div>
+
+            <div class="fecha">
+                12 · 03 · 2027
+            </div>
+
+           <a href="inicio.html" class="boton" onclick="salir(event)">
+    ENTRAR
+</a>
+
+        </div>
+
+    </section>
+<script>
+    function salir(event) {
+        event.preventDefault();
+
+        document.querySelector(".portada").classList.add("salida");
+
+        setTimeout(function() {
+            window.location.href = "inicio.html";
+        }, 700);
+    }
+</script>
+
+</body>
+
+</html>

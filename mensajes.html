@@ -1,0 +1,449 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mensajes | Mis XV</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(5, 20, 45, 0.82),
+                    rgba(5, 20, 45, 0.90)
+                ),
+                url("fondo.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            min-height: 100vh;
+
+            animation: aparecer 0.8s ease;
+        }
+
+        @keyframes aparecer {
+
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            padding: 25px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+            background: rgba(0, 10, 30, 0.35);
+
+            backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            display: flex;
+            gap: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+
+            padding: 10px 18px;
+
+            border-radius: 25px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(70, 160, 255, 0.35);
+
+            box-shadow:
+                0 0 15px rgba(80, 180, 255, 0.3);
+        }
+
+
+        /* CONTENIDO */
+
+        .contenido {
+            max-width: 800px;
+
+            margin: auto;
+
+            padding: 60px 25px;
+
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 50px;
+
+            margin-bottom: 10px;
+
+            text-shadow:
+                0 0 15px rgba(70, 180, 255, 0.8);
+        }
+
+        .descripcion {
+            color: #d9ecff;
+
+            font-size: 18px;
+
+            margin-bottom: 40px;
+        }
+
+
+        /* FORMULARIO */
+
+        .formulario {
+            background: rgba(20, 80, 140, 0.25);
+
+            border: 1px solid rgba(130, 200, 255, 0.3);
+
+            backdrop-filter: blur(12px);
+
+            border-radius: 22px;
+
+            padding: 30px;
+
+            max-width: 600px;
+
+            margin: auto;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+
+            padding: 15px;
+
+            margin-bottom: 15px;
+
+            border-radius: 12px;
+
+            border: 1px solid rgba(150, 210, 255, 0.3);
+
+            background: rgba(0, 20, 50, 0.45);
+
+            color: white;
+
+            font-size: 16px;
+
+            outline: none;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #bcd9f5;
+        }
+
+        textarea {
+            min-height: 130px;
+
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #63b9ff;
+
+            box-shadow:
+                0 0 12px rgba(80, 180, 255, 0.3);
+        }
+
+
+        /* BOTÓN */
+
+        .enviar {
+            padding: 14px 35px;
+
+            border-radius: 25px;
+
+            border: 1px solid rgba(255, 255, 255, 0.5);
+
+            background: rgba(40, 130, 220, 0.5);
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .enviar:hover {
+            background: rgba(50, 160, 255, 0.8);
+
+            transform: scale(1.05);
+
+            box-shadow:
+                0 0 20px rgba(80, 180, 255, 0.5);
+        }
+
+
+        /* MENSAJES */
+
+        .lista-mensajes {
+            margin-top: 45px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+        }
+
+        .mensaje {
+            text-align: left;
+
+            padding: 20px;
+
+            border-radius: 18px;
+
+            background: rgba(20, 80, 140, 0.25);
+
+            border: 1px solid rgba(130, 200, 255, 0.25);
+
+            backdrop-filter: blur(8px);
+        }
+
+        .mensaje h3 {
+            margin: 0 0 8px;
+
+            color: #8ed0ff;
+        }
+
+        .mensaje p {
+            margin: 0;
+
+            color: #e2f2ff;
+
+            line-height: 1.5;
+        }
+
+
+        /* CELULAR */
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 20px;
+
+                padding: 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .descripcion {
+                font-size: 16px;
+            }
+
+            .formulario {
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <div class="logo">
+            MIS XV
+        </div>
+
+        <nav>
+
+            <a href="inicio.html">
+                Inicio
+            </a>
+
+            <a href="galeria.html">
+                Galería
+            </a>
+
+            <a href="mensajes.html">
+                Mensajes
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO -->
+
+    <main class="contenido">
+
+        <h1>Mensajes</h1>
+
+        <p class="descripcion">
+            Déjame unas palabras para recordar este día.
+        </p>
+
+
+        <!-- FORMULARIO -->
+
+        <div class="formulario">
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Tu nombre (opcional)"
+            >
+
+            <textarea
+                id="mensaje"
+                placeholder="Escribe tu mensaje..."
+            ></textarea>
+
+            <button class="enviar" id="botonEnviar">
+                Enviar mensaje
+            </button>
+
+        </div>
+
+
+        <!-- MENSAJES -->
+
+        <div class="lista-mensajes" id="listaMensajes">
+
+        </div>
+
+
+    </main>
+
+   <!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+    const supabaseUrl = "https://mdyanimoegicpxjzawnu.supabase.co";
+    const supabaseKey = "sb_publishable_ACMdOCrdlOUj9yU3SRSWug_8q22AVJ9";
+
+    const supabaseClient = window.supabase.createClient(
+        supabaseUrl,
+        supabaseKey
+    );
+
+    const nombreInput = document.getElementById("nombre");
+    const mensajeInput = document.getElementById("mensaje");
+    const botonEnviar = document.getElementById("botonEnviar");
+    const listaMensajes = document.getElementById("listaMensajes");
+
+    botonEnviar.addEventListener("click", async () => {
+        const nombre = nombreInput.value.trim() || "Anónimo";
+        const mensaje = mensajeInput.value.trim();
+
+        if (!mensaje) {
+            alert("Escribe un mensaje antes de enviarlo.");
+            return;
+        }
+
+        const { error } = await supabaseClient
+            .from("mensajes")
+            .insert([
+                {
+                    nombre: nombre,
+                    mensaje: mensaje
+                }
+            ]);
+
+        if (error) {
+            console.error("Error al enviar:", error);
+            alert("No se pudo enviar el mensaje.");
+            return;
+        }
+
+        alert("¡Mensaje enviado!");
+        nombreInput.value = "";
+        mensajeInput.value = "";
+
+        cargarMensajes();
+    });
+
+    async function cargarMensajes() {
+        const { data, error } = await supabaseClient
+            .from("mensajes")
+            .select("*")
+            .order("id", { ascending: false });
+
+        if (error) {
+            console.error("Error al cargar mensajes:", error);
+            return;
+        }
+
+        listaMensajes.innerHTML = "";
+
+        data.forEach(item => {
+            const div = document.createElement("div");
+            div.className = "mensaje";
+
+            const titulo = document.createElement("h3");
+            titulo.textContent = item.nombre;
+
+            const texto = document.createElement("p");
+            texto.textContent = item.mensaje;
+
+            div.appendChild(titulo);
+            div.appendChild(texto);
+
+            listaMensajes.appendChild(div);
+        });
+    }
+
+    cargarMensajes();
+</script>
+</body>
+</html>
